@@ -27,3 +27,7 @@ use App\Http\Controllers\PageController;
 Route::get('about', [PageController::class, 'about']);
 Route::get('team', [PageController::class, 'team']);
 
+
+// Название сущности в URL во множественном числе, контроллер в единственном
+Route::get('articles', [ArticleController::class, 'index'])
+  ->name('articles.index'); // имя маршрута, нужно для того, чтобы не создавать ссылки руками
