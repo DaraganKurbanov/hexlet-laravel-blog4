@@ -6,12 +6,13 @@
 <meta charset="utf-8">
 </head>
 <body>
-<h1>Список статей</h1>
+<h1>Список статей (старый)</h1>
     <ul>
         @foreach ($articles as $article)
             <li>
-                <h2>{{ $article->name }}</h2>
+            <h2>{{ $article->name }}</h2>
                 <p>{{ $article->body }}</p>
+            
             </li>
         @endforeach
     </ul>

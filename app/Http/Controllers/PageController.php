@@ -17,4 +17,13 @@ class PageController extends Controller
     {
         return view('team');
     }
+	
+	// для тестов - удалить
+	public function articles123()
+    {
+        return view('articles123');
+    }
+	
+	
+	
 }
