@@ -21,6 +21,36 @@ class ArticleController extends Controller
         return view('article.show', compact('article'));
     }
 	
+	// редактирование
+	public function edit($id)
+	{
+    	$article = Article::findOrFail($id);
+	    return view('article.edit', compact('article'));
+	}
+
+	public function update(Request $request, $id)
+	{
+		
+    	$article = Article::findOrFail($id);
+		
+	    $data = $request->validate([
+	        // У обновления немного измененная валидация
+	        // В проверку уникальности добавляется название поля и id текущего объекта
+	        // Если этого не сделать, Laravel будет ругаться, что имя уже существует
+	        'name' => "required|unique:articles,name,{$article->id}",
+	        'body' => 'required|min:100',
+	    ]);
+		
+	    $article->fill($data);
+	    $article->save();
+		
+	    return redirect()
+    	    ->route('articles.index');
+		
+	}
+	
+
+	
 }
 
 /*

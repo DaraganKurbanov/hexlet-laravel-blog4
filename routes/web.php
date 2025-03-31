@@ -34,6 +34,11 @@ Route::get('articles123', [PageController::class, 'articles123']);
 // Название сущности в URL во множественном числе, контроллер в единственном
 Route::get('articles', [ArticleController::class, 'index'])   ->name('articles.index');  // Старое обращение
 Route::get('articles/{id}', [ArticleController::class, 'show'])   ->name('articles.show'); // Новое обращение
+
+Route::get('articles/{id}/edit', [ArticleController::class, 'edit'])  ->name('articles.edit'); // Редактирование
+
+Route::patch('articles/{id}', [ArticleController::class, 'update'])   ->name('articles.update'); // Метод PATCH
+
 /*
 Route::get('articles/{articleId}/comments/{id}', function ($articleId, $id) {
     // ...
