@@ -1,7 +1,7 @@
 ﻿@extends('layouts.app')
 
 @section('content')
-    <h1>Список статей 2226872</h1>
+    <h1>Комменетарии - страница-заглушка</h1>
     @foreach ($articles as $article)
     	
 	    <a href="{{ route('articles.show', $article) }}"> {{-- ссылка на статью --}}

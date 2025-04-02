@@ -7,7 +7,6 @@
 
 <!-- Секция, содержащая HTML блок. Имеет открывающую и закрывающую часть. -->
 @section('content')
-    <h1>О блоге</h1>
+    <h1>Команда (team - пробная ссылка)</h1>
     <p>Эксперименты с Laravel на Хекслете</p>
-    <a class="nav-link" href="{{ route('articles.index') }}">Статьи</a>
 @endsection
